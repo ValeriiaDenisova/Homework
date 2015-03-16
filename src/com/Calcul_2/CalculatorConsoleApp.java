@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 
 public class CalculatorConsoleApp {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, UncorrectSingException {
         Calculator calc = new Calculator();
         do {
             System.out.println("Привет! Я калькулятор");//Print greetings;
