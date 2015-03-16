@@ -21,12 +21,14 @@ public class Calculator {
         return helpInfo;
     }
 
-    public Double perform(String z, Double a, Double b) {
+    public Double perform(String z, Double a, Double b) throws UncorrectSingException {
         for (Operation anArr : arr) {
             if (z.equals(anArr.getOperationSign())) {
                 return anArr.perform(a, b);
+            } else {
+                throw new UncorrectSingException();
             }
         }
-
+        return a;
     }
 }
