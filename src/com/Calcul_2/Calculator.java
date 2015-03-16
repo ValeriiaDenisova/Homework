@@ -25,10 +25,8 @@ public class Calculator {
         for (Operation anArr : arr) {
             if (z.equals(anArr.getOperationSign())) {
                 return anArr.perform(a, b);
-            } else {
-                throw new UncorrectSingException();
             }
         }
-        return a;
+        throw new UncorrectSingException("Wrong sign");
     }
 }

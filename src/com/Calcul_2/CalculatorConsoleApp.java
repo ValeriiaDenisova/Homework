@@ -14,12 +14,14 @@ public class CalculatorConsoleApp {
             String z = reader.readLine();
             if ("exit".equals(z)) break;
             if ("help".equals(z)) {
-                calc.help();
+                String help = calc.help();
+                System.out.println(help.toString());
                 z = reader.readLine();
             }
             double a = Double.parseDouble(reader.readLine());
             double b = Double.parseDouble(reader.readLine());//Read values, perform operation, write it
-            calc.perform(z, a, b);
+            Double rez = calc.perform(z, a, b);
+            System.out.println("rezult is " + rez.toString());
         }while(true);
     }
 }
