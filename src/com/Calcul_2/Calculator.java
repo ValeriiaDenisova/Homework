@@ -1,5 +1,6 @@
 package com.Calcul_2;
 
+
 /**
  * Created by v.dmitrieva on 11.03.15.
  */
@@ -21,12 +22,12 @@ public class Calculator {
         return helpInfo;
     }
 
-    public Double perform(String z, Double a, Double b) throws UncorrectSingException {
-        for (Operation anArr : arr) {
-            if (z.equals(anArr.getOperationSign())) {
-                return anArr.perform(a, b);
+    public Double perform(String z, Double a, Double b) throws Exception {
+            for (Operation anArr : arr) {
+                if (z.equals(anArr.getOperationSign())) {
+                    return anArr.perform(a, b);
+                }
             }
-        }
-        throw new UncorrectSingException("Wrong sign");
+        throw new Exception();
     }
 }
