@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 
 public class CalculatorConsoleApp {
-    public static void main(String[] args) throws IOException, UncorrectSingException {
+    public static void main(String[] args) throws IOException {
         Calculator calc = new Calculator();
         do {
             System.out.println("Привет! Я калькулятор");//Print greetings;
@@ -20,8 +20,15 @@ public class CalculatorConsoleApp {
             }
             double a = Double.parseDouble(reader.readLine());
             double b = Double.parseDouble(reader.readLine());//Read values, perform operation, write it
-            Double rez = calc.perform(z, a, b);
-            System.out.println("rezult is " + rez.toString());
+            try{
+                Double rez = calc.perform(z, a, b);
+                System.out.println("rezult is " + rez.toString());
+            } catch (Exception e){
+                System.out.println("Неверный математический символ");
+                String help = calc.help();
+                System.out.println(help);
+            }
+
         }while(true);
     }
 }
