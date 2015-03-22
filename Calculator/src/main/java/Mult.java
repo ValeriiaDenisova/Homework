@@ -1,13 +1,13 @@
-package com.Calcul_2;
+package main.java;
 
 /**
  * Created by Валерия on 11.03.2015.
  */
-public class Plus implements Operation {
-    String sign = "+";
-    String info = "операция прибавления";
+class Mult implements Operation{
+    String sign = "*";
+    String info = "операция умножения";
     public Double perform(Double a, Double b){
-        return a+b;
+        return a*b;
     }
 
     @Override

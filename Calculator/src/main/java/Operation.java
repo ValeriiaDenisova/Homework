@@ -1,4 +1,4 @@
-package com.Calcul_2;
+package main.java;
 
 /**
  * Created by Валерия on 11.03.2015.
