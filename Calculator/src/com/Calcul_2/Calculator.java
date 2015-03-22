@@ -2,7 +2,7 @@ package com.Calcul_2;
 
 
 /**
- * Created by v.dmitrieva on 11.03.15.
+ *
  */
 public class Calculator {
     Operation[] arr = new Operation[4];
@@ -22,12 +22,24 @@ public class Calculator {
         return helpInfo;
     }
 
+<<<<<<< afb744608c1b482adc6b1b239a1511f4b95297ea:src/com/Calcul_2/Calculator.java
     public Double perform(String z, Double a, Double b) throws Exception {
+=======
+    public Double perform(String z, Double a, Double b) throws WrongSingException {
+>>>>>>> c5b8ad33dfa0afb432707a281ba0df8a59a609d1:Calculator/src/com/Calcul_2/Calculator.java
             for (Operation anArr : arr) {
                 if (z.equals(anArr.getOperationSign())) {
                     return anArr.perform(a, b);
                 }
             }
+<<<<<<< afb744608c1b482adc6b1b239a1511f4b95297ea:src/com/Calcul_2/Calculator.java
         throw new Exception();
+=======
+        throw new WrongSingException("Wrong sing!!!");
+>>>>>>> c5b8ad33dfa0afb432707a281ba0df8a59a609d1:Calculator/src/com/Calcul_2/Calculator.java
     }
 }
+
+
+
+
