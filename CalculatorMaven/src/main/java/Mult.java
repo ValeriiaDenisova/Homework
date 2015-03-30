@@ -5,8 +5,12 @@
 class Mult implements Operation{
     String sign = "*";
     String info = "операция умножения";
-    public Double perform(Double a, Double b){
-        return a*b;
+    public Double perform(Double a, Double b)throws ArithmeticException{
+        Double rez = a*b;
+        if(rez.equals(Double.POSITIVE_INFINITY)){
+            throw new ArithmeticException("Multiplication Of Two Max Numbers");
+        }
+        return rez;
     }
 
     @Override

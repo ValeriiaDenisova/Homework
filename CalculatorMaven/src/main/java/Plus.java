@@ -5,8 +5,12 @@
 public class Plus implements Operation {
     String sign = "+";
     String info = "операция прибавления";
-    public Double perform(Double a, Double b){
-        return a+b;
+    public Double perform(Double a, Double b)throws ArithmeticException{
+        Double rez = a+b;
+        if(rez.equals(Double.POSITIVE_INFINITY)){
+            throw new ArithmeticException("Plus Of Two Max Numbers");
+        }
+        return rez;
     }
 
     @Override

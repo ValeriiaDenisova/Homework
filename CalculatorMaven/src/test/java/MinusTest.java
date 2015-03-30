@@ -8,14 +8,22 @@ import static org.junit.Assert.assertEquals;
 public class MinusTest {
     @Test
     public void MinusOfTwoNumbersTest() {
+        //Arrange
         Minus min = new Minus();
+
+        //Act
         Double rez = min.perform(5.0, 2.0);
+
+        //Assert
         assertEquals("Minus is wrong", 3.0, rez, 1e-10);
     }
 
-    @Test(expected = Exception.class)
+    @Test(expected = ArithmeticException.class)
     public void MinusOfTwoMinimalNumbersTest(){
+        //Arrange
         Minus min = new Minus();
-        min.perform(1.7e+308, 1.7e+308);
+
+        //Act
+        min.perform(-1.7e+308, 1.7e+308);
     }
 }

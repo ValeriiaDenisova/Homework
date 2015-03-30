@@ -5,7 +5,10 @@
 class Div implements Operation{
     String sign = "/";
     String info = "операция деления";
-    public Double perform(Double a, Double b){
+    public Double perform(Double a, Double b) throws ArithmeticException{
+        if(b.equals(0.0)){
+            throw new ArithmeticException("Division by zero");
+        }
         return a/b;
     }
 
