@@ -1,6 +1,7 @@
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 /**
  * Created by Валерия on 26.03.2015.
@@ -28,8 +29,8 @@ public class CalculatorTest {
         operations[3] = mock(Div.class);
         Mockito.when(operations[0].getInfo()).thenReturn("операция прибавления");
         Mockito.when(operations[1].getInfo()).thenReturn("операция вычитания");
-        Mockito.when(operations[0].getInfo()).thenReturn("операция умножения");
-        Mockito.when(operations[1].getInfo()).thenReturn("операция деления");
+        //Mockito.when(operations[0].getInfo()).thenReturn("операция умножения");
+        // Mockito.when(operations[1].getInfo()).thenReturn("операция деления");
     }
 
     @Test
@@ -41,7 +42,9 @@ public class CalculatorTest {
         arr[2] = new Mult();
         arr[3] = new Div();
         Mockito.when(calculators.perform("+", 5.0, 2.0)).thenReturn(7.0);
+        assertEquals("Plus is wrong", 7.0, calculators.perform("+", 5.0, 2.0), 1e-10);
         Mockito.when(calculators.perform("-", 5.0, 2.0)).thenReturn(3.0);
+        assertEquals("Minus is wrong", 3.0, calculators.perform("-", 5.0, 2.0), 1e-10);
         Mockito.when(calculators.perform("*", 5.0, 2.0)).thenReturn(10.0);
         Mockito.when(calculators.perform("/", 5.0, 2.0)).thenReturn(2.5);
     }
