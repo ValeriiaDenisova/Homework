@@ -5,15 +5,11 @@ import java.io.InputStreamReader;
 
 public class CalculatorConsoleApp {
     public static void main(String[] args) throws Exception {
-        Operation[] arr = new Operation[4];
-        arr[0] = new Plus();
-        arr[1] = new Minus();
-        arr[2] = new Mult();
-        arr[3] = new Div();
+        Operation[] arr = CalcFactory.calcSimple();
         Calculator calc = new Calculator(arr);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         do {
-            System.out.println("Привет! Я калькулятор");//Print greetings;
+            System.out.println("Привет! Я калькулятор");
             String z = reader.readLine();
             if ("exit".equals(z)) break;
             if ("help".equals(z)) {
