@@ -17,22 +17,16 @@ public class CalculatorTest {
         operations[1] = mock(Minus.class);
         operations[2] = mock(Mult.class);
         operations[3] = mock(Div.class);
-    }
 
-    @Test
-    public void getOperationSignTest () throws WrongSingException {
         Mockito.when(operations[0].getOperationSign()).thenReturn("+");
         Mockito.when(operations[1].getOperationSign()).thenReturn("-");
         Mockito.when(operations[2].getOperationSign()).thenReturn("*");
         Mockito.when(operations[3].getOperationSign()).thenReturn("/");
-    }
 
-    @Test
-    public void getInfoTest(){
-        Mockito.when(operations[0].getInfo()).thenReturn("операция прибавления");
-        Mockito.when(operations[1].getInfo()).thenReturn("операция вычитания");
-        Mockito.when(operations[2].getInfo()).thenReturn("операция умножения");
-        Mockito.when(operations[3].getInfo()).thenReturn("операция деления");
+        Mockito.when(operations[0].getOperationSign()).thenReturn("+");
+        Mockito.when(operations[1].getOperationSign()).thenReturn("-");
+        Mockito.when(operations[2].getOperationSign()).thenReturn("*");
+        Mockito.when(operations[3].getOperationSign()).thenReturn("/");
     }
 
     @Test
@@ -55,10 +49,10 @@ public class CalculatorTest {
 
     @Test
     public void helpTest() {
-        Calculator calculators = mock(Calculator.class);
+        Calculator calculators = new Calculator(operations);
 
-        String help = "Calculator help \n" + calculators.getOperationSign() + " : " + calculators.getInfo() + " \n";
+        String h = calculators.help();
 
-        assertEquals("Help isn't work", "Calculator help \n+ : операция прибавления \n- : операция вычитания \n* : операция умножения \n/ : операция деления", help);
+        assertEquals("Help isn't work", "Calculator help \n+ : plus operation \n- : minus operation \n* : multiplication operation \n/ : division operation", h);
     }
 }
