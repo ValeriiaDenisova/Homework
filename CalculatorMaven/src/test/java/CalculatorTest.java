@@ -42,11 +42,23 @@ public class CalculatorTest {
 
         //Act
         calculators.perform("+", 5.0, 2.0);
+        calculators.perform("-", 5.0, 2.0);
+        calculators.perform("*", 5.0, 2.0);
+        calculators.perform("/", 5.0, 2.0);
 
         //Assert
         verify(calculators).perform("+", 5.0, 2.0);
-
+        verify(calculators).perform("-", 5.0, 2.0);
+        verify(calculators).perform("*", 5.0, 2.0);
+        verify(calculators).perform("/", 5.0, 2.0);
     }
 
+    @Test
+    public void helpTest() {
+        Calculator calculators = mock(Calculator.class);
 
+        String help = "Calculator help \n" + calculators.getOperationSign() + " : " + calculators.getInfo() + " \n";
+
+        assertEquals("Help isn't work", "Calculator help \n+ : операция прибавления \n- : операция вычитания \n* : операция умножения \n/ : операция деления", help);
+    }
 }
