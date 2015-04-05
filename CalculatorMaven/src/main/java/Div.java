@@ -4,7 +4,7 @@
  */
 class Div implements Operation{
     String sign = "/";
-    String info = "операция деления";
+    String info = "division operation";
     public Double perform(Double a, Double b) throws ArithmeticException{
         if(b.equals(0.0)){
             throw new ArithmeticException("Division by zero");

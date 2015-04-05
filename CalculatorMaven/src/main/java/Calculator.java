@@ -7,10 +7,6 @@ public class Calculator {
 
     Calculator(Operation[] arr) {
         this.arr = arr;
-        /*arr[0] = new Plus();
-        arr[1] = new Minus();
-        arr[2] = new Mult();
-        arr[3] = new Div();*/
     }
 
     public String help() {

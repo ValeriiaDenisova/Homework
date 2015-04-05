@@ -5,7 +5,7 @@ import java.util.DoubleSummaryStatistics;
  */
 public class Minus implements Operation{
     String sign = "-";
-    String info = "операция вычитания";
+    String info = "minus operation";
     public Double perform(Double a, Double b)throws ArithmeticException{
         Double rez = a-b;
         if(rez.equals(Double.NEGATIVE_INFINITY)){

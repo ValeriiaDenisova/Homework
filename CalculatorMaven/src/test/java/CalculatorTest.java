@@ -23,10 +23,10 @@ public class CalculatorTest {
         Mockito.when(operations[2].getOperationSign()).thenReturn("*");
         Mockito.when(operations[3].getOperationSign()).thenReturn("/");
 
-        Mockito.when(operations[0].getOperationSign()).thenReturn("+");
-        Mockito.when(operations[1].getOperationSign()).thenReturn("-");
-        Mockito.when(operations[2].getOperationSign()).thenReturn("*");
-        Mockito.when(operations[3].getOperationSign()).thenReturn("/");
+        Mockito.when(operations[0].getInfo()).thenReturn("plus operation");
+        Mockito.when(operations[1].getInfo()).thenReturn("minus operation");
+        Mockito.when(operations[2].getInfo()).thenReturn("multiplication operation");
+        Mockito.when(operations[3].getInfo()).thenReturn("division operation");
     }
 
     @Test
@@ -49,10 +49,14 @@ public class CalculatorTest {
 
     @Test
     public void helpTest() {
+        //Arrange
         Calculator calculators = new Calculator(operations);
 
+        //Act
         String h = calculators.help();
 
-        assertEquals("Help isn't work", "Calculator help \n+ : plus operation \n- : minus operation \n* : multiplication operation \n/ : division operation", h);
+        //Assert
+        assertEquals("Help isn't work", "Calculator help \n+ : plus operation \n- : minus operation \n* : multiplication operation \n/ : division operation \n", h);
     }
+
 }
