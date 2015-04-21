@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -10,5 +11,9 @@ public class HomePage {
       this.driver = driver;
     }
 
+    public RezultPage search(String text){
+        driver.findElement(By.xpath(".//*[@id='text']")).sendKeys(text);
+        return new RezultPage(driver);
+    }
 
 }
