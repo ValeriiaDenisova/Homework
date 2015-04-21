@@ -17,7 +17,7 @@ public class YandexTestPage {
 
     @BeforeClass
     public static void initPathese(){
-        System.setProperty("webdriver.chrome.driver", "E:\\Git\\Homework\\YandexAutoTest\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/src/test/resources/chromedriver.exe");
     }
 
     @Before
@@ -29,19 +29,23 @@ public class YandexTestPage {
     }
 
     @Test
-    public void yandexSearchTest(){
+    public void yandexSearchTest() throws InterruptedException {
         HomePage home = initElements(driver, HomePage.class);
         //driver.get("http://yandex.ua");
         home.search("war and peace");
+        Thread.sleep(10000);
+
     }
 
-    /*@Test
+    @Test
     public void testMarketSearch(){
-
-    }*/
+        HomePage home = initElements(driver, HomePage.class);
+        home.market();
+    }
 
     @After
-    public void tearDown(){
+    public void tearDown() throws InterruptedException {
+
         driver.quit();
     }
 
