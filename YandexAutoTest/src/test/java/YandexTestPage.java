@@ -17,7 +17,7 @@ public class YandexTestPage {
 
     @BeforeClass
     public static void initPathese(){
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\Desktop\\ranorextest\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "E:\\Git\\Homework\\YandexAutoTest\\chromedriver.exe");
     }
 
     @Before
@@ -29,7 +29,7 @@ public class YandexTestPage {
     }
 
     @Test
-    public void testSearch(){
+    public void yandexSearchTest(){
         HomePage home = initElements(driver, HomePage.class);
         //driver.get("http://yandex.ua");
         home.search("war and peace");
@@ -42,7 +42,7 @@ public class YandexTestPage {
 
     @After
     public void tearDown(){
-        driver.close();
+        driver.quit();
     }
 
 
