@@ -11,9 +11,15 @@ public class HomePage {
       this.driver = driver;
     }
 
-    public RezultPage search(String text){
+    public RezultPage search(String text) throws InterruptedException {
         driver.findElement(By.xpath(".//*[@id='text']")).sendKeys(text);
+        driver.findElement(By.cssSelector(".button.suggest2-form__button")).click();
+
         return new RezultPage(driver);
+    }
+
+    public void market (){
+        driver.findElement(By.xpath())
     }
 
 }
