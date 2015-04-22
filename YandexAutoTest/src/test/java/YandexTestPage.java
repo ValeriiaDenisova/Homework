@@ -33,14 +33,15 @@ public class YandexTestPage {
         HomePage home = initElements(driver, HomePage.class);
         //driver.get("http://yandex.ua");
         home.search("war and peace");
-        Thread.sleep(10000);
+        Thread.sleep(3000);
 
     }
 
     @Test
-    public void testMarketSearch(){
+    public void testMarketSearch() throws InterruptedException {
         HomePage home = initElements(driver, HomePage.class);
-        home.market();
+        home.market("Olympus Pen E-PL7 Kit");
+        Thread.sleep(3000);
     }
 
     @After

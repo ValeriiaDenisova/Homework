@@ -18,8 +18,10 @@ public class HomePage {
         return new RezultPage(driver);
     }
 
-    public void market (){
-        driver.findElement(By.xpath())
+    public void market (String text){
+        driver.findElement(By.xpath(".//*[@id='tab-market']")).click();
+        driver.findElement(By.id("header-search")).sendKeys(text);
+        driver.findElement(By.cssSelector("button[class^='button button_size_m button_side_right']")).click();
     }
 
 }
