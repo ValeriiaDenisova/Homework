@@ -26,4 +26,18 @@ public class HomePage {
         driver.findElement(By.xpath(".//*[@id='Category']/option[3]")).click();
         driver.findElement(By.id("Add")).click();
     }
+
+    public void deleteFirstPerson(){
+        driver.findElement(By.xpath(".//*[@id='VIPs']//tr[2]/*/input")).click();
+        driver.findElement(By.id("Delete")).click();
+    }
+
+    public void clearDataBase(){
+        driver.findElement(By.id("Clear")).click();
+    }
+
+    public String vipCount() {
+        String text = driver.findElement(By.id("count")).getText();
+        return text;
+    }
 }
