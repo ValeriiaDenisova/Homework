@@ -1,3 +1,4 @@
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -39,6 +40,12 @@ public class RanorexTest {
         home.clearDataBase();
         home.vipCount();
         assertEquals(home.vipCount(), "VIP count: 0");
+        Thread.sleep(3000);
+    }
+
+    @After
+    public void exit(){
+        driver.close();
     }
 
 
