@@ -19,9 +19,8 @@ public class RanorexTest {
     private WebDriver driver;
 
     @BeforeClass
-    public static void initPathese(){
+    public static void initPathese() {
         System.setProperty("webdriver.chrome.driver", "E:\\Git\\Homework\\MyRanorexTest\\src\\test\\drivers\\chromedriver.exe");
-        //System.setProperty("webdriver.opera.driver", "E:\\Git\\Homework\\MyRanorexTest\\src\\test\\drivers\\chromedriver.exe");
     }
 
     @Before
@@ -32,19 +31,31 @@ public class RanorexTest {
     }
 
     @Test
-    public void addAndDeletePersonInDataBase () throws InterruptedException {
+    public void addPersonInDataBase () throws InterruptedException {
         driver.get("http://www.ranorex.com/web-testing-examples/vip/");
         HomePage home = initElements(driver, HomePage.class);
         home.addManInDataBase("Ivanov", "Ivan");
-        Thread.sleep(2000);
+        assertEquals(home.checkPerson(), "Ivanov");
+        Thread.sleep(1000);
         home.addWomanInDataBase("Kykyshkina", "Valiia");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
+
+    }
+
+    @Test
+    public void deletePersonFromDabaBase() throws InterruptedException {
+        driver.get("http://www.ranorex.com/web-testing-examples/vip/");
+        HomePage home = initElements(driver, HomePage.class);
+        home.addManInDataBase("Ivanov", "Ivan");
+        Thread.sleep(1000);
+        home.addWomanInDataBase("Kykyshkina", "Valiia");
+        Thread.sleep(1000);
         home.deleteFirstPerson();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         home.clearDataBase();
         home.vipCount();
         assertEquals(home.vipCount(), "VIP count: 0");
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     @After

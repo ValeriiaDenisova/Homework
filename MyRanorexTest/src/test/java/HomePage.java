@@ -40,4 +40,9 @@ public class HomePage {
         String text = driver.findElement(By.id("count")).getText();
         return text;
     }
+
+    public String checkPerson() {
+        String text = driver.findElement(By.xpath(".//*[@id='VIPs']/tbody/tr[2]/td[2]")).getText();
+        return text;
+    }
 }
