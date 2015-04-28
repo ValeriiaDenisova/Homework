@@ -10,8 +10,9 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 
+import static com.thoughtworks.selenium.SeleneseTestNgHelper.assertEquals;
 import static org.openqa.selenium.support.PageFactory.initElements;
-import static org.testng.Assert.assertEquals;
+
 
 /**
  * Created by v.dmitrieva on 23.04.15.
@@ -21,15 +22,15 @@ public class RanorexTest {
 
     @BeforeClass
     public static void initPathese() {
-        System.setProperty("webdriver.chrome.driver", "E:\\Git\\Homework\\MyRanorexTest\\src\\test\\drivers\\chromedriver.exe");
-        System.setProperty("webdriver.ie.driver", "E:\\Git\\Homework\\MyRanorexTest\\src\\test\\drivers\\IEDriverServer.exe");
+        System.setProperty("webdriver.chrome.driver", "E:\\Git\\Homework\\MyRanorexSerenity\\src\\test\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.ie.driver", "E:\\Git\\Homework\\MyRanorexSerenity\\src\\test\\drivers\\IEDriverServer.exe");
 
     }
 
     @Before
     public void setUp(){
-        //driver = new FirefoxDriver();
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
+        //driver = new ChromeDriver();
         //driver = new InternetExplorerDriver();
         //driver = new HtmlUnitDriver();
     }
