@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 
 import static org.openqa.selenium.support.PageFactory.initElements;
@@ -21,12 +22,15 @@ public class RanorexTest {
     @BeforeClass
     public static void initPathese() {
         System.setProperty("webdriver.chrome.driver", "E:\\Git\\Homework\\MyRanorexTest\\src\\test\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.ie.driver", "E:\\Git\\Homework\\MyRanorexTest\\src\\test\\drivers\\IEDriverServer.exe");
+
     }
 
     @Before
     public void setUp(){
         //driver = new FirefoxDriver();
         driver = new ChromeDriver();
+        //driver = new InternetExplorerDriver();
         //driver = new HtmlUnitDriver();
     }
 
