@@ -28,7 +28,7 @@ public class RanorexTest {
     @Managed
     private WebDriver driver;
 
-    @ManagedPages(defaultUrl = "http://en.wiktionary.org/wiki/Wiktionary")
+    @ManagedPages(defaultUrl = "http://www.ranorex.com/web-testing-examples/vip/")
     public Pages pages;
 
     @Steps
