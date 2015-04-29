@@ -1,13 +1,18 @@
-import com.opera.core.systems.OperaDriver;
+package com.valeriia;
+
+import com.thoughtworks.selenium.SeleneseTestNgHelper;
+import net.serenitybdd.junit.runners.SerenityRunner;
+import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.ManagedPages;
+import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.pages.Pages;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.junit.runner.RunWith;
 
 
 import static com.thoughtworks.selenium.SeleneseTestNgHelper.assertEquals;
@@ -17,8 +22,17 @@ import static org.openqa.selenium.support.PageFactory.initElements;
 /**
  * Created by v.dmitrieva on 23.04.15.
  */
+@RunWith(SerenityRunner.class)
 public class RanorexTest {
+
+    @Managed
     private WebDriver driver;
+
+    @ManagedPages(defaultUrl = "http://en.wiktionary.org/wiki/Wiktionary")
+    public Pages pages;
+
+    @Steps
+    public EndUserSteps endUser;
 
     @BeforeClass
     public static void initPathese() {
@@ -40,7 +54,7 @@ public class RanorexTest {
         driver.get("http://www.ranorex.com/web-testing-examples/vip/");
         HomePage home = initElements(driver, HomePage.class);
         home.addManInDataBase("Ivanov", "Ivan");
-        assertEquals(home.checkPerson(), "Ivanov");
+        SeleneseTestNgHelper.assertEquals(home.checkPerson(), "Ivanov");
         Thread.sleep(1000);
         home.addWomanInDataBase("Kykyshkina", "Valiia");
         Thread.sleep(1000);
@@ -59,7 +73,7 @@ public class RanorexTest {
         Thread.sleep(1000);
         home.clearDataBase();
         home.vipCount();
-        assertEquals(home.vipCount(), "VIP count: 0");
+        SeleneseTestNgHelper.assertEquals(home.vipCount(), "VIP count: 0");
         Thread.sleep(1000);
     }
 
