@@ -45,11 +45,9 @@ public class HomePage extends PageObject {
     @FindBy(xpath = ".//*[@id='VIPs']/tbody/tr[2]/td[2]")
     WebElement firstPersonInDB;
 
-
-   /*public HomePage (WebDriver driver){
-        super(driver);
-        //this.driver = driver;
-    }*/
+    public void getMainPage(String url) {
+        getDriver().get(url);
+    }
 
     public void addManInDataBase(String firstName, String lastName) {
         fieldFirstName.sendKeys(firstName);
@@ -57,11 +55,6 @@ public class HomePage extends PageObject {
         radioButtonMale.click();
         checkMusic.click();
         buttonAdd.click();
-        /*driver.findElement(By.id("FirstName")).sendKeys(firstName);
-        driver.findElement(By.id("LastName")).sendKeys(lastName);
-        driver.findElement(By.xpath("//input[@value='male']")).click();
-        driver.findElement(By.xpath(".//*[@id='Category']/option[2]")).click();
-        driver.findElement(By.id("Add")).click();*/
     }
 
     public void addWomanInDataBase(String firstName, String lastName) {
@@ -70,23 +63,15 @@ public class HomePage extends PageObject {
         radioButtonFemale.click();
         checkMovie.click();
         buttonAdd.click();
-        /*driver.findElement(By.id("FirstName")).sendKeys(firstName);
-        driver.findElement(By.id("LastName")).sendKeys(lastName);
-        driver.findElement(By.xpath("//input[@value='female']")).click();
-        driver.findElement(By.xpath(".//*[@id='Category']/option[3]")).click();
-        driver.findElement(By.id("Add")).click();*/
     }
 
     public void deleteFirstPerson(){
         radioButtonOfFirstPersonInDB.click();
         buttonDelete.click();
-        //driver.findElement(By.xpath(".//*[@id='VIPs']//tr[2]/*/input")).click();
-        //driver.findElement(By.id("Delete")).click();
     }
 
     public void clearDataBase(){
         buttonClear.click();
-        //driver.findElement(By.id("Clear")).click();
     }
 
     public String vipCount() {

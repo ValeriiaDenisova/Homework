@@ -11,7 +11,38 @@ import org.openqa.selenium.WebDriver;
  */
 public class EndUserSteps extends ScenarioSteps {
 
-    WebDriver driver;
+    public HomePage getPage()
+    {
+        return  getPages().currentPageAt(HomePage.class);
+    }
 
+    @Step
+    public void getMain(String url) {
+        getPage().getMainPage(url);
+    }
 
+    @Step
+    public void addManInDataBase(){
+        getPage().addManInDataBase("Ivanov", "Ivan");
+    }
+
+    @Step
+    public void addWomanInDataBase(){
+        getPage().addWomanInDataBase("Kykyshkina", "Valiia");
+    }
+
+    @Step
+    public void deleteFirstPerson(){
+        getPage().deleteFirstPerson();
+    }
+
+    @Step
+    public void clearDataBase(){
+        getPage().clearDataBase();
+    }
+
+    @Step
+    public void vipCount(){
+        getPage().vipCount();
+    }
 }

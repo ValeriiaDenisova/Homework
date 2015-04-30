@@ -14,7 +14,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.junit.runner.RunWith;
 
-
 import static com.thoughtworks.selenium.SeleneseTestNgHelper.assertEquals;
 import static org.openqa.selenium.support.PageFactory.initElements;
 
@@ -51,29 +50,25 @@ public class RanorexTest {
 
     @Test
     public void addPersonInDataBase () throws InterruptedException {
-        driver.get("http://www.ranorex.com/web-testing-examples/vip/");
-        HomePage home = initElements(driver, HomePage.class);
-        home.addManInDataBase("Ivanov", "Ivan");
-        SeleneseTestNgHelper.assertEquals(home.checkPerson(), "Ivanov");
+        endUser.getMain("http://www.ranorex.com/web-testing-examples/vip/");
+        endUser.addManInDataBase();
         Thread.sleep(1000);
-        home.addWomanInDataBase("Kykyshkina", "Valiia");
+        endUser.addWomanInDataBase();
         Thread.sleep(1000);
 
     }
 
     @Test
     public void deletePersonFromDabaBase() throws InterruptedException {
-        driver.get("http://www.ranorex.com/web-testing-examples/vip/");
-        HomePage home = initElements(driver, HomePage.class);
-        home.addManInDataBase("Ivanov", "Ivan");
+        endUser.getMain("http://www.ranorex.com/web-testing-examples/vip/");
+        endUser.addManInDataBase();
         Thread.sleep(1000);
-        home.addWomanInDataBase("Kykyshkina", "Valiia");
+        endUser.addWomanInDataBase();
         Thread.sleep(1000);
-        home.deleteFirstPerson();
+        endUser.deleteFirstPerson();
         Thread.sleep(1000);
-        home.clearDataBase();
-        home.vipCount();
-        SeleneseTestNgHelper.assertEquals(home.vipCount(), "VIP count: 0");
+        endUser.clearDataBase();
+        endUser.vipCount();
         Thread.sleep(1000);
     }
 
@@ -81,8 +76,5 @@ public class RanorexTest {
     public void exit(){
         driver.close();
     }
-
-
-
 
 }
