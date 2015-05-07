@@ -37,7 +37,6 @@ public class RanorexTest {
     public static void initPathese() {
         System.setProperty("webdriver.chrome.driver", "E:\\Git\\Homework\\MyRanorexSerenity\\src\\test\\drivers\\chromedriver.exe");
         System.setProperty("webdriver.ie.driver", "E:\\Git\\Homework\\MyRanorexSerenity\\src\\test\\drivers\\IEDriverServer.exe");
-
     }
 
     @Before

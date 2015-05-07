@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 
 public class HomePage extends PageObject {
-    //private WebDriver driver;
+
     @FindBy(id = "FirstName")
     WebElement fieldFirstName;
 
@@ -70,7 +70,7 @@ public class HomePage extends PageObject {
         buttonDelete.click();
     }
 
-    public void clearDataBase(){
+    public void clearDataBase() {
         buttonClear.click();
     }
 
