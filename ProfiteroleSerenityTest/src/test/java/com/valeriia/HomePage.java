@@ -13,16 +13,16 @@ public class HomePage extends PageObject {
     WebElement registration;
 
     @FindBy(id = "login")
-    WebElement login;
+    WebElement fieldLogin;
 
     @FindBy(id = "password")
-    WebElement password;
+    WebElement fieldPassword;
 
     @FindBy(id = "confirmPassword")
-    WebElement confirmPassword;
+    WebElement fieldConfirmPassword;
 
     @FindBy(id = "email")
-    WebElement email;
+    WebElement fieldEmail;
 
     @FindBy(id = "datepicker")
     WebElement datepicker;
@@ -41,6 +41,31 @@ public class HomePage extends PageObject {
 
     @FindBy(xpath = "//button[@class='btn']")
     WebElement signUp;
+
+    @FindBy(id = "passwordError")
+    WebElement passwordError;
+
+    public void getMainPage(String url) {
+        getDriver().get(url);
+    }
+
+    public void registrationNewPersonWithFillingAllTheMandatoryFields(String login, String password, String confirmPassword, String email) {
+        fieldLogin.sendKeys(login);
+        fieldPassword.sendKeys(password);
+        fieldConfirmPassword.sendKeys(confirmPassword);
+        fieldEmail.sendKeys(email);
+        iAmAgree.click();
+        signUp.click();
+    }
+
+    public void registrationNewPersonWithOutPasswordAndConfirmPassword(String login, String email) {
+        fieldLogin.sendKeys(login);
+        fieldEmail.sendKeys(email);
+        iAmAgree.click();
+        signUp.click();
+    }
+
+
 
 
 
