@@ -45,6 +45,9 @@ public class HomePage extends PageObject {
     @FindBy(id = "passwordError")
     WebElement passwordError;
 
+    @FindBy(xpath = "//h2")
+    WebElement title;
+
     public void getMainPage(String url) {
         getDriver().get(url);
     }
@@ -64,9 +67,5 @@ public class HomePage extends PageObject {
         iAmAgree.click();
         signUp.click();
     }
-
-
-
-
 
 }
