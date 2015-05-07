@@ -6,6 +6,8 @@ import net.thucydides.core.reports.adaptors.specflow.ScenarioStep;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.openqa.selenium.WebDriver;
 
+import static com.thoughtworks.selenium.SeleneseTestNgHelper.assertEquals;
+
 /**
  * Created by v.dmitrieva on 29.04.15.
  */
@@ -22,27 +24,24 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void addManInDataBase(){
+    public void addManInDataBase() {
         getPage().addManInDataBase("Ivanov", "Ivan");
+        assertEquals(getPage().checkPerson(), "Ivanov");
     }
 
     @Step
-    public void addWomanInDataBase(){
+    public void addWomanInDataBase() {
         getPage().addWomanInDataBase("Kykyshkina", "Valiia");
     }
 
     @Step
-    public void deleteFirstPerson(){
+    public void deleteFirstPerson() {
         getPage().deleteFirstPerson();
     }
 
     @Step
-    public void clearDataBase(){
+    public void clearDataBase() {
         getPage().clearDataBase();
-    }
-
-    @Step
-    public void vipCount(){
-        getPage().vipCount();
+        assertEquals(getPage().vipCount(), "VIP count: 0");
     }
 }

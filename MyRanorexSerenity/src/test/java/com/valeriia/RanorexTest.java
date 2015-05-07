@@ -55,7 +55,6 @@ public class RanorexTest {
         Thread.sleep(1000);
         endUser.addWomanInDataBase();
         Thread.sleep(1000);
-
     }
 
     @Test
@@ -68,7 +67,6 @@ public class RanorexTest {
         endUser.deleteFirstPerson();
         Thread.sleep(1000);
         endUser.clearDataBase();
-        endUser.vipCount();
         Thread.sleep(1000);
     }
 
