@@ -7,6 +7,8 @@ import net.thucydides.core.steps.ScenarioSteps;
 
 import java.util.List;
 
+import static com.gargoylesoftware.htmlunit.WebAssert.assertElementPresent;
+import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
 import static com.thoughtworks.selenium.SeleneseTestNgHelper.assertEquals;
 
 /**
@@ -22,13 +24,29 @@ public class EndUserSteps extends ScenarioSteps {
     @Step
     public void getMain(String url) {
         getPage().getMainPage(url);
-        Assert.IsTrue(getPage().IsTextPresent("Bugs Catcher"));
-        assertEquals(getPage().title, "Добро пожаловать на сайт");
+        assertTrue(getPage().containsText("Добро пожаловать на сайт"));
     }
     
     @Step
     public void registrationNewPersonWithFillingAllTheMandatoryFields() {
-        getPage().registrationNewPersonWithFillingAllTheMandatoryFields("MyLogin", "1234", "1234", "dmytrievavi@gmail.com");
+        getPage().registrationNewPersonWithFillingAllTheMandatoryFields("MyLogin", "123456", "123456", "dmytrievavi@gmail.com");
+    }
+
+    @Step
+    public void registrationNewPersonWithOutPasswordAndConfirmPassword(){
+        getPage().registrationNewPersonWithOutPasswordAndConfirmPassword("MyLogin", "dmytrievavi@gmail.com");
+        //assertTrue(getPage().textPasswordError);
+    }
+
+    @Step
+    public void entry() {
+        getPage().entry("MyLogin", "123456");
+        //assertTrue(getPage().containsText("Добро пожаловать на сайт"));
+    }
+
+    @Step
+    public void changeProfile() {
+        getPage().changeProfile("MyLogin", "123456", "123456", "123456", "02.05.2015");
     }
 
 }

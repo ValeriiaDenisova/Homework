@@ -37,15 +37,34 @@ public class ProfitroleTest {
 
     @Before
     public void setUp() {
-        driver = new FirefoxDriver();
+        //driver = new FirefoxDriver();
         //driver = new InternetExplorerDriver();
-        //driver = new ChromeDriver();
+        driver = new ChromeDriver();
     }
 
     @Test
-    public void registrationNewPerson() {
+    public void registrationNewPersonTest() {
         endUser.getMain("http://gioia-profiterole.rhcloud.com/");
         endUser.registrationNewPersonWithFillingAllTheMandatoryFields();
+
+    }
+
+    @Test
+    public void registrationNewPersonWithOutPasswordAndConfirmPasswordTest(){
+        endUser.getMain("http://gioia-profiterole.rhcloud.com/");
+        endUser.registrationNewPersonWithOutPasswordAndConfirmPassword();
+    }
+
+    @Test
+    public void entry() {
+        endUser.getMain("http://gioia-profiterole.rhcloud.com/");
+        endUser.entry();
+    }
+
+    @Test
+    public void changeProfile() {
+        endUser.getMain("http://gioia-profiterole.rhcloud.com/");
+        endUser.changeProfile();
     }
 
     @After
