@@ -2,7 +2,9 @@ package com.valeriia;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import static com.gargoylesoftware.htmlunit.WebAssert.assertElementPresent;
 import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
@@ -11,6 +13,7 @@ import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
  * Created by v.dmitrieva on 07.05.15.
  */
 public class HomePage extends PageObject {
+    WebDriver driver;
 
     @FindBy(xpath = "//a[@href='/registration']")
     WebElement registration;
@@ -78,6 +81,24 @@ public class HomePage extends PageObject {
     @FindBy(id = "changePassword")
     WebElement fieldChangePassword;
 
+    @FindBy(xpath = "//li[@class='dropdown'][1]")
+    WebElement createMenu;
+
+    @FindBy(xpath = "//a[@href='/menu']")
+    WebElement createMenuForDay;
+
+    @FindBy(xpath = "//button[@value='#breakfast']")
+    WebElement breakfast;
+
+    @FindBy(xpath = "//*[@id='cuisine']/div[1]")
+    WebElement ukraineKitchen;
+
+    @FindBy(xpath = "//*[@id='cuisine']/div[4]")
+    WebElement fistMealSnacks;
+
+    @FindBy(id = "breakfast")
+    WebElement youBreakfast;
+
     public void getMainPage(String url) {
         getDriver().get(url);
     }
@@ -98,6 +119,7 @@ public class HomePage extends PageObject {
         fieldEmail.sendKeys(email);
         iAmAgree.click();
         signUp.click();
+        //assertTrue(textPasswordError);
     }
 
     public void entry(String login, String password) {
@@ -106,15 +128,9 @@ public class HomePage extends PageObject {
         entryPassword.sendKeys(password);
         entryButton.click();
         assertTrue(containsText("Добро пожаловать на сайт"));
-        exit.click();
     }
 
-    public void changeProfile(String login, String password, String changePassword, String confirmPassword,  String datepicker) {
-        entry.click();
-        entryLogin.sendKeys(login);
-        entryPassword.sendKeys(password);
-        entryButton.click();
-        assertTrue(containsText("Добро пожаловать на сайт"));
+    public void changeProfile(String changePassword, String confirmPassword,  String datepicker) {
         profile.click();
         profileButton.click();
         fieldChangePassword.sendKeys(changePassword);
@@ -122,5 +138,14 @@ public class HomePage extends PageObject {
         fieldDatepicker.sendKeys(datepicker);
         country.click();
         entryButton.click();
+    }
+
+    public void createBreakfastForDay() {
+        createMenu.click();
+        createMenuForDay.click();
+        breakfast.click();
+        ukraineKitchen.click();
+        Actions actions = new Actions(driver);
+        actions.dragAndDrop(fistMealSnacks, youBreakfast);
     }
 }

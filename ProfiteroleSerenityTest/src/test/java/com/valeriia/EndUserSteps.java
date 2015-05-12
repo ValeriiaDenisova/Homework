@@ -46,7 +46,12 @@ public class EndUserSteps extends ScenarioSteps {
 
     @Step
     public void changeProfile() {
-        getPage().changeProfile("MyLogin", "123456", "123456", "123456", "02.05.2015");
+        getPage().changeProfile("123456", "123456", "02.05.2015");
+    }
+
+    @Step
+    public void createBreakfastForDay() {
+        getPage().createBreakfastForDay();
     }
 
 }

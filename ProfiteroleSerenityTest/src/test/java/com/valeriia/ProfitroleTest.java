@@ -64,7 +64,16 @@ public class ProfitroleTest {
     @Test
     public void changeProfile() {
         endUser.getMain("http://gioia-profiterole.rhcloud.com/");
+        endUser.entry();
         endUser.changeProfile();
+    }
+
+    @Test
+    public void createMenuForBreakfastWithUkrainianKitchen() {
+        endUser.getMain("http://gioia-profiterole.rhcloud.com/");
+        endUser.createBreakfastForDay();
+
+
     }
 
     @After
