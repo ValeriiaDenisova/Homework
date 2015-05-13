@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
 
 /**
  * Created by v.dmitrieva on 07.05.15.
@@ -73,12 +74,12 @@ public class ProfitroleTest {
         endUser.getMain("http://gioia-profiterole.rhcloud.com/");
         endUser.createBreakfastForDay();
 
-
     }
 
     @After
     public void exit(){
         driver.close();
+        driver.quit();
     }
 
 }

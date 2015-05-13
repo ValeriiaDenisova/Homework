@@ -2,8 +2,10 @@ package com.valeriia;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import static com.gargoylesoftware.htmlunit.WebAssert.assertElementPresent;
@@ -81,7 +83,7 @@ public class HomePage extends PageObject {
     @FindBy(id = "changePassword")
     WebElement fieldChangePassword;
 
-    @FindBy(xpath = "//li[@class='dropdown'][1]")
+    @FindBy(xpath = "html/body/div[1]/div[1]/div/div/ul[1]/li[1]/a")
     WebElement createMenu;
 
     @FindBy(xpath = "//a[@href='/menu']")
@@ -93,8 +95,8 @@ public class HomePage extends PageObject {
     @FindBy(xpath = "//*[@id='cuisine']/div[1]")
     WebElement ukraineKitchen;
 
-    @FindBy(xpath = "//*[@id='cuisine']/div[4]")
-    WebElement fistMealSnacks;
+    @FindBy(xpath = "//*[@id='cuisine']/div[4]/div[2]")
+    WebElement firstMealSnacks;
 
     @FindBy(id = "breakfast")
     WebElement youBreakfast;
@@ -145,7 +147,9 @@ public class HomePage extends PageObject {
         createMenuForDay.click();
         breakfast.click();
         ukraineKitchen.click();
+        //WebElement firstMealSnacks = getDriver().findElement(By.xpath("//*[@id='cuisine']/div[4]/div[2]"));
+        //WebElement youBreakfast = getDriver().findElement(By.id("breakfast"));
         Actions actions = new Actions(driver);
-        actions.dragAndDrop(fistMealSnacks, youBreakfast);
+        actions.dragAndDrop(firstMealSnacks, youBreakfast);
     }
 }
