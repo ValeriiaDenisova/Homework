@@ -54,4 +54,10 @@ public class EndUserSteps extends ScenarioSteps {
         getPage().createBreakfastForDay();
     }
 
+    @Step
+    public void search() {
+        getPage().search("Борщ");
+        assertTrue(getPage().containsText("Борщ"));
+    }
+
 }

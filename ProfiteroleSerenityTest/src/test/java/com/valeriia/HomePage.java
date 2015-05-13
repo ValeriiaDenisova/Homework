@@ -101,6 +101,9 @@ public class HomePage extends PageObject {
     @FindBy(id = "breakfast")
     WebElement youBreakfast;
 
+    @FindBy(xpath = "//input[@class='search-query']")
+    WebElement searchField;
+
     public void getMainPage(String url) {
         getDriver().get(url);
     }
@@ -151,5 +154,10 @@ public class HomePage extends PageObject {
         //WebElement youBreakfast = getDriver().findElement(By.id("breakfast"));
         Actions actions = new Actions(driver);
         actions.dragAndDrop(firstMealSnacks, youBreakfast);
+    }
+
+    public void search(String text) {
+        searchField.sendKeys(text + "\n");
+
     }
 }

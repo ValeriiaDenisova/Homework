@@ -73,7 +73,12 @@ public class ProfitroleTest {
     public void createMenuForBreakfastWithUkrainianKitchen() {
         endUser.getMain("http://gioia-profiterole.rhcloud.com/");
         endUser.createBreakfastForDay();
+    }
 
+    @Test
+    public void serchBorsh() {
+        endUser.getMain("http://gioia-profiterole.rhcloud.com/");
+        endUser.search();
     }
 
     @After
