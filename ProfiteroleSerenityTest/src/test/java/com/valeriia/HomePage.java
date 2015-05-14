@@ -83,7 +83,7 @@ public class HomePage extends PageObject {
     @FindBy(id = "changePassword")
     WebElement fieldChangePassword;
 
-    @FindBy(xpath = "html/body/div[1]/div[1]/div/div/ul[1]/li[1]/a")
+    @FindBy(xpath = "//a[contains(text(),'Создать меню')]")
     WebElement createMenu;
 
     @FindBy(xpath = "//a[@href='/menu']")
@@ -95,7 +95,7 @@ public class HomePage extends PageObject {
     @FindBy(xpath = "//*[@id='cuisine']/div[1]")
     WebElement ukraineKitchen;
 
-    @FindBy(xpath = "//*[@id='cuisine']/div[4]/div[2]")
+    @FindBy(xpath = "//*[@id='cuisine']/div[4]/div[3]/label")
     WebElement firstMealSnacks;
 
     @FindBy(id = "breakfast")
@@ -103,6 +103,21 @@ public class HomePage extends PageObject {
 
     @FindBy(xpath = "//input[@class='search-query']")
     WebElement searchField;
+
+    @FindBy(xpath = "//a[contains(text(),'Рецепты')]")
+    WebElement recipe;
+
+    @FindBy(xpath = "//a[contains(text(),'Все рецепты')]")
+    WebElement allRecipe;
+
+    @FindBy(xpath = "//img[@alt='Японская']")
+    WebElement japaneseFood;
+
+    @FindBy(xpath = "//a[contains(text(),'Закуски')]")
+    WebElement snacks;
+
+    @FindBy(xpath = "//div[contains(text(),'Пирожки с луком')]")
+    WebElement pattiesWithOnions;
 
     public void getMainPage(String url) {
         getDriver().get(url);
@@ -158,6 +173,14 @@ public class HomePage extends PageObject {
 
     public void search(String text) {
         searchField.sendKeys(text + "\n");
+    }
+
+    public void viewJapaneseRecipe() {
+        recipe.click();
+        allRecipe.click();
+        japaneseFood.click();
+        snacks.click();
+        pattiesWithOnions.click();
 
     }
 }

@@ -60,4 +60,10 @@ public class EndUserSteps extends ScenarioSteps {
         assertTrue(getPage().containsText("Борщ"));
     }
 
+    @Step
+    public void viewJapaneseRecipe() {
+        getPage().viewJapaneseRecipe();
+        assertTrue(getPage().containsText("Пирожки с луком"));
+    }
+
 }

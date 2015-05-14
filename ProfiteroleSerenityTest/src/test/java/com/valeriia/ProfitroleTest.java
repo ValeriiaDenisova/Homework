@@ -38,16 +38,15 @@ public class ProfitroleTest {
 
     @Before
     public void setUp() {
-        //driver = new FirefoxDriver();
+        driver = new FirefoxDriver();
         //driver = new InternetExplorerDriver();
-        driver = new ChromeDriver();
+        //driver = new ChromeDriver();
     }
 
     @Test
     public void registrationNewPersonTest() {
         endUser.getMain("http://gioia-profiterole.rhcloud.com/");
         endUser.registrationNewPersonWithFillingAllTheMandatoryFields();
-
     }
 
     @Test
@@ -79,6 +78,12 @@ public class ProfitroleTest {
     public void serchBorsh() {
         endUser.getMain("http://gioia-profiterole.rhcloud.com/");
         endUser.search();
+    }
+
+    @Test
+    public void viewJapaneseRecipe() {
+        endUser.getMain("http://gioia-profiterole.rhcloud.com/");
+        endUser.viewJapaneseRecipe();
     }
 
     @After
