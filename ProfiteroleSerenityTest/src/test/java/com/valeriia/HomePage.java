@@ -92,7 +92,7 @@ public class HomePage extends PageObject {
     @FindBy(xpath = "//button[@value='#breakfast']")
     WebElement breakfast;
 
-    @FindBy(xpath = "//*[@id='cuisine']/div[1]")
+    @FindBy(xpath = "//img[@alt='Украинская']")
     WebElement ukraineKitchen;
 
     @FindBy(xpath = "//*[@id='cuisine']/div[4]/div[3]/label")
@@ -119,11 +119,11 @@ public class HomePage extends PageObject {
     @FindBy(xpath = "//div[contains(text(),'Пирожки с луком')]")
     WebElement pattiesWithOnions;
 
-    public void getMainPage(String url) {
+    public void get_main_page(String url) {
         getDriver().get(url);
     }
 
-    public void registrationNewPersonWithFillingAllTheMandatoryFields(String login, String password, String confirmPassword, String email) {
+   /* public void registrationNewPersonWithFillingAllTheMandatoryFields(String login, String password, String confirmPassword, String email) {
         registration.click();
         fieldLogin.sendKeys(login);
         fieldPassword.sendKeys(password);
@@ -131,26 +131,26 @@ public class HomePage extends PageObject {
         fieldEmail.sendKeys(email);
         iAmAgree.click();
         signUp.click();
-    }
+    }*/
 
-    public void registrationNewPersonWithOutPasswordAndConfirmPassword(String login, String email) {
+   /* public void registrationNewPersonWithOutPasswordAndConfirmPassword(String login, String email) {
         registration.click();
         fieldLogin.sendKeys(login);
         fieldEmail.sendKeys(email);
         iAmAgree.click();
         signUp.click();
         //assertTrue(textPasswordError);
-    }
+    }*/
 
-    public void entry(String login, String password) {
+   /* public void entry(String login, String password) {
         entry.click();
         entryLogin.sendKeys(login);
         entryPassword.sendKeys(password);
         entryButton.click();
         assertTrue(containsText("Добро пожаловать на сайт"));
-    }
+    }*/
 
-    public void changeProfile(String changePassword, String confirmPassword,  String datepicker) {
+ /*   public void changeProfile(String changePassword, String confirmPassword,  String datepicker) {
         profile.click();
         profileButton.click();
         fieldChangePassword.sendKeys(changePassword);
@@ -158,9 +158,9 @@ public class HomePage extends PageObject {
         fieldDatepicker.sendKeys(datepicker);
         country.click();
         entryButton.click();
-    }
+    }*/
 
-    public void createBreakfastForDay() {
+   /* public void createBreakfastForDay() {
         createMenu.click();
         createMenuForDay.click();
         breakfast.click();
@@ -169,11 +169,11 @@ public class HomePage extends PageObject {
         //WebElement youBreakfast = getDriver().findElement(By.id("breakfast"));
         Actions actions = new Actions(driver);
         actions.dragAndDrop(firstMealSnacks, youBreakfast);
-    }
+    }*/
 
-    public void search(String text) {
+  /*  public void search(String text) {
         searchField.sendKeys(text + "\n");
-    }
+    }*/
 
     public void viewJapaneseRecipe() {
         recipe.click();
