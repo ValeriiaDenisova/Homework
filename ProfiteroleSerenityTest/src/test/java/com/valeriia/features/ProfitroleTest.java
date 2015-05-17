@@ -1,5 +1,6 @@
-package com.valeriia;
+package com.valeriia.features;
 
+import com.valeriia.steps.EndUserSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -11,12 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.interactions.Actions;
-
-import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
 
 /**
  * Created by v.dmitrieva on 07.05.15.
@@ -99,7 +95,7 @@ public class ProfitroleTest {
         endUser.get_main_page("http://gioia-profiterole.rhcloud.com/");
         endUser.click_on_create_menu();
         endUser.click_on_create_menu_for_day();
-        endUser.click_on_breacfast();
+        endUser.click_on_breakfast();
         endUser.click_on_ukraine_kitchen();
         endUser.drag_and_drop_first_meal_snacks_on_you_breakfast_field();
     }
