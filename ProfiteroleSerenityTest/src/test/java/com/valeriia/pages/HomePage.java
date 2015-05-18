@@ -107,7 +107,7 @@ public class HomePage extends PageObject {
     WebElement plus;
 
     @FindBy(id = "3")
-    WebElement second;;
+    WebElement second;
 
     @FindBy(xpath = "//button[contains(text(),'Обед')]")
     WebElement dinner;
