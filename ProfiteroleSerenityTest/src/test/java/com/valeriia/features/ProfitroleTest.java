@@ -98,22 +98,42 @@ public class ProfitroleTest {
         endUser.click_on_breakfast();
         endUser.click_on_ukraine_kitchen();
         endUser.drag_and_drop_first_meal_snacks_on_you_breakfast_field();
+        endUser.add_the_same_meal();
+        endUser.click_on_breakfast_button_ready();
+    }
+
+    @Test
+    public void create_menu_for_dinner_with_chinese_kitchen() {
+        endUser.get_main_page("http://gioia-profiterole.rhcloud.com/");
+        endUser.click_on_create_menu();
+        endUser.click_on_create_menu_for_day();
+        endUser.click_on_dinner();
+        endUser.click_on_chinese_kitchen();
+        endUser.click_on_second_meal();
+        endUser.drag_and_drop_second_meal_on_you_breakfast_field();
+        endUser.click_on_dinner_button_ready();
     }
 
     @Test
     public void search_borsh() {
         endUser.get_main_page("http://gioia-profiterole.rhcloud.com/");
-        endUser.enter_borsh_in_search_field("Борщ"+ "\n");
+        endUser.enter_borsh_in_search_field("Борщ" + "\n");
     }
 
     @Test
-    public void viewJapaneseRecipe() {
+    public void view_Japanese_recipe() {
         endUser.get_main_page("http://gioia-profiterole.rhcloud.com/");
         endUser.click_on_recipe();
         endUser.click_on_all_recipe();
         endUser.click_on_japanese_food();
         endUser.click_on_snacks();
         endUser.click_on_patties_with_onions();
+    }
+
+    @Test
+    public void working_with_the_main_picture() {
+        endUser.get_main_page("http://gioia-profiterole.rhcloud.com/");
+        endUser.click_the_main_picture();
     }
 
     @After

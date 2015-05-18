@@ -133,6 +133,40 @@ public class EndUserSteps extends ScenarioSteps {
         getPage().dragAndDrop();
     }
 
+    @Step
+    public void add_the_same_meal() {
+        getPage().plus();
+    }
+
+    @Step
+    public void click_on_breakfast_button_ready() {
+        getPage().clickOnBreakfactButtonReady();
+    }
+
+    @Step
+    public void click_on_dinner_button_ready() {
+        getPage().clickOnDinnerButtonReady();
+    }
+
+    @Step
+    public void click_on_dinner() {
+        getPage().dinner();
+    }
+
+    @Step
+    public void click_on_chinese_kitchen() {
+        getPage().chineseKitchen();
+    }
+
+    @Step
+    public void click_on_second_meal() {
+        getPage().second();
+    }
+
+    @Step
+    public void drag_and_drop_second_meal_on_you_breakfast_field() {
+        getPage().dragAndDropDinner();
+    }
 
     @Step
     public void enter_borsh_in_search_field(String search_word) {
@@ -164,5 +198,11 @@ public class EndUserSteps extends ScenarioSteps {
     public void click_on_patties_with_onions() {
         getPage().pattiesWithOnions();
         assertTrue(getPage().containsText("Пирожки с луком"));
+    }
+
+    @Step
+    public void click_the_main_picture() {
+        getPage().mainPicture();
+        assertTrue(getPage().containsText("Добро пожаловать на сайт"));
     }
 }

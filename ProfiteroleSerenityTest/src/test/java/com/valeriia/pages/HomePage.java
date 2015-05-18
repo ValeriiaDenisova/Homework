@@ -94,11 +94,32 @@ public class HomePage extends PageObject {
     @FindBy(xpath = "//img[@alt='Украинская']")
     WebElement ukraineKitchen;
 
+    @FindBy(xpath = "//img[@alt='Японская']")
+    WebElement chineseKitchen;
+
     @FindBy(xpath = ".//*[@id='cuisine']/div[4]/div[2]/span/img")
     WebElement firstMealSnacks;
 
+    @FindBy(xpath = ".//*[@id='cuisine']/div[5]/div[2]/span/img")
+    WebElement firstMealSecond;
+
+    @FindBy(xpath = "//input[@value='+']")
+    WebElement plus;
+
+    @FindBy(id = "3")
+    WebElement second;;
+
+    @FindBy(xpath = "//button[contains(text(),'Обед')]")
+    WebElement dinner;
+
+    @FindBy(xpath = "//a[contains(text(),'Ужин')]")
+    WebElement supper;
+
     @FindBy(id = "breakfast")
     WebElement youBreakfast;
+
+    @FindBy(id = "dinner")
+    WebElement youDinner;
 
     @FindBy(xpath = "//input[@class='search-query']")
     WebElement searchField;
@@ -117,6 +138,16 @@ public class HomePage extends PageObject {
 
     @FindBy(xpath = "//div[contains(text(),'Пирожки с луком')]")
     WebElement pattiesWithOnions;
+
+    @FindBy(xpath = "//area[@alt='Логотип']")
+    WebElement mainPicture;
+
+    @FindBy(xpath = ".//*[@id='dinner']/div[2]/button")
+    WebElement dinnerButtonReady;
+
+    @FindBy(xpath = ".//*[@id='breakfast']/div/button")
+    WebElement breakfastButtonReady;
+
 
     public void get_main_page(String url) {
         getDriver().get(url);
@@ -203,6 +234,14 @@ public class HomePage extends PageObject {
         actions.dragAndDrop(firstMealSnacks, youBreakfast).build().perform();
     }
 
+    public void clickOnBreakfactButtonReady() {
+        breakfastButtonReady.click();
+    }
+
+    public void clickOnDinnerButtonReady() {
+        dinnerButtonReady.click();
+    }
+
     public void searchField(String search_word){
         searchField.sendKeys(search_word);
     }
@@ -223,8 +262,32 @@ public class HomePage extends PageObject {
         snacks.click();
     }
 
-    public void pattiesWithOnions(){
+    public void pattiesWithOnions() {
         pattiesWithOnions.click();
     }
 
+    public void mainPicture() {
+        mainPicture.click();
+    }
+
+    public void plus() {
+        plus.click();
+    }
+
+    public void dinner() {
+        dinner.click();
+    }
+
+    public void chineseKitchen() {
+        chineseKitchen.click();
+    }
+
+    public void second() {
+        second.click();
+    }
+
+    public void dragAndDropDinner() {
+        Actions actions = new Actions(getDriver());
+        actions.dragAndDrop(firstMealSecond, youDinner).build().perform();
+    }
 }
