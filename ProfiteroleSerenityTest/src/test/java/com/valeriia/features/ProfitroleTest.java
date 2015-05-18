@@ -12,7 +12,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by v.dmitrieva on 07.05.15.
@@ -36,7 +35,7 @@ public class ProfitroleTest {
 
     @Before
     public void setUp() {
-        driver = new FirefoxDriver();
+        //driver = new FirefoxDriver();
         //driver = new InternetExplorerDriver();
         //driver = new ChromeDriver();
     }
