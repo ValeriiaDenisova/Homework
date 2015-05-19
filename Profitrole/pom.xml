@@ -12,7 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <serenity.version>1.0.44</serenity.version>
-        <webdriver.driver>chromedriver</webdriver.driver>
+        <webdriver.driver>firefox</webdriver.driver>
     </properties>
 
     <dependencies>
@@ -59,9 +59,6 @@
                 <version>2.18.1</version>
                 <configuration>
                     <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/Test*.java</include>
-                        <include>**/When*.java</include>
                         <include>**/*Story.java</include>
                     </includes>
                     <argLine>-Xmx512m</argLine>
@@ -106,5 +103,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
