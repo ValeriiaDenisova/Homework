@@ -5,6 +5,7 @@ import net.thucydides.core.steps.ScenarioSteps;
 import pages.RegistrationPage;
 
 import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
+import static com.thoughtworks.selenium.SeleneseTestNgHelper.assertEquals;
 
 /**
  * Created by Valeriia on 18.05.2015.
@@ -52,6 +53,16 @@ public class RegistrationStep extends ScenarioSteps {
     @Step
     public void click_button_sign_up() {
         registrationPage.signUp();
-        assertTrue(registrationPage.containsText("Пользователь с таким логином уже существует."));
     }
+
+    @Step
+    public void should_see_text_user_already_exists(String message) {
+        assertEquals(message, registrationPage.getMessageUserAlreadyExists());
+    }
+
+    @Step
+    public void should_see_text_Password_Error(String message) {
+        assertTrue(registrationPage.containsText(message));
+    }
+
 }

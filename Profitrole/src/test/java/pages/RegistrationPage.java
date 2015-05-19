@@ -39,6 +39,12 @@ public class RegistrationPage extends PageObject {
     @FindBy(xpath = "//button[@class='btn']")
     WebElement signUp;
 
+    @FindBy(id = "loginError")
+    WebElement loginError;
+
+    @FindBy(id = "passwordError")
+    WebElement passwordError;
+
     public void get_main_page(String url) {
         getDriver().get(url);
     }
@@ -70,4 +76,9 @@ public class RegistrationPage extends PageObject {
     public void signUp(){
         signUp.click();
     }
+
+    public String getMessageUserAlreadyExists() {
+        return loginError.getText();
+    }
+
 }
