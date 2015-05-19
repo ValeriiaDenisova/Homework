@@ -47,4 +47,17 @@ public class CreateMenuStory {
         createMenuStep.drag_and_drop_second_meal_on_you_breakfast_field();
         createMenuStep.click_on_dinner_button_ready();
     }
+
+    @Test
+    public void create_menu_on_tuesday_for_supper_with_french_kitchen() {
+        createMenuStep.get_main_page("http://gioia-profiterole.rhcloud.com/");
+        createMenuStep.click_on_create_menu();
+        createMenuStep.click_on_create_menu_for_the_week();
+        createMenuStep.click_on_tuesday();
+        createMenuStep.click_on_supper();
+        createMenuStep.click_on_french_kitchen();
+        createMenuStep.click_on_dessert();
+        createMenuStep.drag_and_drop_strawberry_mousse();
+        createMenuStep.click_on_supper_button_ready();
+    }
 }

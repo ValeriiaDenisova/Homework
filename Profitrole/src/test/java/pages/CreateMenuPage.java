@@ -16,6 +16,9 @@ public class CreateMenuPage extends PageObject {
     @FindBy(xpath = "//a[@href='/menu']")
     WebElement createMenuForDay;
 
+    @FindBy(xpath = "//a[@href='/menuForWeek']")
+    WebElement createMenuForWeek;
+
     @FindBy(xpath = "//button[@value='#breakfast']")
     WebElement breakfast;
 
@@ -25,11 +28,17 @@ public class CreateMenuPage extends PageObject {
     @FindBy(xpath = "//img[@alt='Японская']")
     WebElement japaneseKitchen;
 
+    @FindBy(xpath = "//img[@alt='Французская']")
+    WebElement frenchKitchen;
+
     @FindBy(xpath = ".//*[@id='cuisine']/div[4]/div[2]/span/img")
     WebElement firstMealSnacks;
 
     @FindBy(xpath = ".//*[@id='cuisine']/div[5]/div[2]/span/img")
     WebElement firstMealSecond;
+
+    @FindBy(xpath = ".//*[@id='cuisine']/div[15]/div[2]/span/img")
+    WebElement strawberryMousse;
 
     @FindBy(xpath = "//input[@value='+']")
     WebElement plus;
@@ -37,10 +46,13 @@ public class CreateMenuPage extends PageObject {
     @FindBy(id = "3")
     WebElement second;
 
+    @FindBy(xpath = "//a[contains(text(),'Десерты')]")
+    WebElement dessert;
+
     @FindBy(xpath = "//button[contains(text(),'Обед')]")
     WebElement dinner;
 
-    @FindBy(xpath = "//a[contains(text(),'Ужин')]")
+    @FindBy(xpath = "//button[contains(text(),'Ужин')]")
     WebElement supper;
 
     @FindBy(id = "breakfast")
@@ -49,11 +61,21 @@ public class CreateMenuPage extends PageObject {
     @FindBy(id = "dinner")
     WebElement youDinner;
 
+    @FindBy(id = "Tu_supper")
+    WebElement youSupperOnTuesday;
+
     @FindBy(xpath = ".//*[@id='dinner']/div[2]/button")
     WebElement dinnerButtonReady;
 
     @FindBy(xpath = ".//*[@id='breakfast']/div/button")
     WebElement breakfastButtonReady;
+
+    @FindBy(xpath = ".//*[@id='Tu_supper']/div/button")
+    WebElement supperButtonReady;
+
+
+    @FindBy(xpath = "//button[@ value='Tu']")
+    WebElement tuesday;
 
     public void get_main_page(String url) {
         getDriver().get(url);
@@ -108,5 +130,35 @@ public class CreateMenuPage extends PageObject {
     public void second() {
         second.click();
     }
+
+    public void createMenuForWeek(){
+        createMenuForWeek.click();
+    }
+
+    public void tuesday(){
+        tuesday.click();
+    }
+
+    public void supper(){
+        supper.click();
+    }
+
+    public void dessert(){
+        dessert.click();
+    }
+
+    public void frenchKitchen() {
+        frenchKitchen.click();
+    }
+
+    public void dragAndDropStrawberryMousse() {
+        Actions actions = new Actions(getDriver());
+        actions.dragAndDrop(strawberryMousse, youSupperOnTuesday).build().perform();
+    }
+
+    public void clickOnSupperButtonReady() {
+        supperButtonReady.click();
+    }
+
 }
 

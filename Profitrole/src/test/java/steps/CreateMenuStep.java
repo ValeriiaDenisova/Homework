@@ -78,4 +78,39 @@ public class CreateMenuStep extends ScenarioSteps {
     public void drag_and_drop_second_meal_on_you_breakfast_field() {
         createMenuPage.dragAndDropDinner();
     }
+
+    @Step
+    public void click_on_create_menu_for_the_week() {
+        createMenuPage.createMenuForWeek();
+    }
+
+    @Step
+    public void click_on_tuesday() {
+        createMenuPage.tuesday();
+    }
+
+    @Step
+    public void click_on_supper() {
+        createMenuPage.supper();
+    }
+
+    @Step
+    public void click_on_french_kitchen() {
+        createMenuPage.frenchKitchen();
+    }
+
+    @Step
+    public void click_on_dessert() {
+        createMenuPage.dessert();
+    }
+
+    @Step
+    public void drag_and_drop_strawberry_mousse() {
+        createMenuPage.dragAndDropStrawberryMousse();
+    }
+
+    @Step
+    public void click_on_supper_button_ready() {
+        createMenuPage.clickOnSupperButtonReady();
+    }
 }
